@@ -1,9 +1,56 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
+\usepackage[top=2cm, bottom=2cm, left=1.1in, right=1.1in]{geometry} % Set the margins of the page
+\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}	% optional arguments for includegraphics
+\usepackage{breqn}	% linebreaking of equations
+\usepackage{booktabs}	% provides extra commands in tables environment
+\usepackage{parskip}	% skip paragraph instead of indenting after new paragraph
+\usepackage{enumitem}	% control layout of itemize, enumeration and description
+\usepackage{listings}	% For writing code type
+\usepackage{bm}		% \bm makes bold any letter or symbol in equation environment
+\usepackage{caption}	% Provides option in caption environment
+\usepackage{subcaption}	% Allows using subcaption inside figure environment
+\usepackage{placeins}	% Defines FloatBarrier
+\usepackage{hyperref}	% Hyperlinks
+\usepackage{tabularx}	% Defines tabularx environment
+\usepackage{array}	% Additional options in tabular environment
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{footnote}
+\usepackage{multirow}	% Allows to use multiple rows in tabular environment
+\usepackage{epstopdf}
+\usepackage{wrapfig}
+\usepackage{nomencl}
+\usepackage{longtable}  % To use long tables 
+\usepackage{cleveref}
+\usepackage{mathtools}
+% Setup the colors for links:
+\hypersetup{
+colorlinks = true,
+urlcolor = NavyBlue,
+linkcolor = black,
+citecolor = Cerulean
+}
+\usepackage{natbib}
+\usepackage{xspace}
+\usepackage{doi}
+\usepackage{mycaps}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usetikzlibrary{decorations.markings,arrows.meta,calc}
+\usetikzlibrary{arrow3d}
+\usepackage{xifthen}
+\usepackage{my3dplot}
+\usepackage{printlen}
 
-\title{TandemWings}
-\author{garranz }
-\date{November 2018}
+\input{preamble.tex}
+
+
+\author{Gonzalo Arranz}
+\title{Tandem wings of finite aspect ratio}
+
 
 \begin{document}
 

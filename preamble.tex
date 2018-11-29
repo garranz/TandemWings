@@ -1,0 +1,217 @@
+% This file contains all the definitions used to create the notes in 
+%    Projects/dragonfly/tex/main.tex
+%
+\newcommand{\mynote}[1]{\textcolor{red}{#1}}
+\newcommand{\myguess}[1]{\textcolor{blue}{#1}}
+
+
+% ----------------------------- %
+%        CAPTION LINES	        %
+% ----------------------------- %
+\newcommand{\myls}[3]{\lineSymbol[#3]{#1}{#2}{.8ex}{.8pt}{}{#2}}
+\newcommand{\sy}[5]{\lineSymbol[#4]{#1}{#2}{.8ex}{.5pt}{#3}{#5}}
+\newcommand{\syn}[3]{\lineSymbol{#1}{#2}{1ex}{.8pt}{#3}{#3}}
+\newcommand{\syt}[3]{\lineSymbol{#1}{#2}{.8ex}{.2pt}{#3}{#3}}
+\newcommand{\ly}[2]{\lineSymbol[#1]{none}{#2}{.8ex}{.5pt}{#2}{#2}}
+\newcommand{\lyy}[2]{\lineSymbol[#1]{none}{#2}{.8ex}{.8pt}{#2}{#2}}
+
+% Rectangle with color:
+\newcommand{\boxshad}[1]{\lineSymbol[-]{none}{#1}{0ex}{.7em}{#1}{#1}}
+
+
+% ----------------------------- %
+%         COLUMN TYPES		%
+% ----------------------------- %
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+
+
+
+
+% ----------------------------- %
+%	MATHEMATICAL SYMBOLS	%
+% ----------------------------- %
+
+% ----------------------------- %
+% Mean/overlines & underlines
+\newcommand{\ov}[1]{\overline{#1}}
+\newcommand{\sd}[1]{\hat{#1}}
+\newcommand{\ud}[1]{\underline{#1}}
+\newcommand{\td}[1]{\tilde{#1}}
+% Vectors:
+\renewcommand{\v}[1]{\bm{\mathbf{#1}}}         
+\newcommand{\vg}[1]{\bm{#1}}           % greek letters
+% Matrices/Tensors
+\newcommand{\tensor}[1]{\mathsf{#1}}   % tensor
+\newcommand{\mt}[1]{\ov{\ov{#1}}}      % matrix
+% Symbols and others
+\newcommand{\eps}{\varepsilon}
+\newcommand{\bk}[1]{\left(#1\right)}  % Brakcet
+% Derivatives
+\newcommand{\df}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\pf}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\ppf}[2]{\frac{\partial^2#1}{\partial#2^2}}
+
+% --------------------------- %
+% VARIABLES USED IN THE TEXT
+\newcommand{\om}{\vg{\omega}} % Vorticity (vector form)
+\newcommand{\Uinf}{U}         % Freestream velocity
+
+\newcommand{\St}{\mathit{St}} % Strouhal Number
+\newcommand{\re}{\mathit{Re}} % Reynolds Number
+\newcommand{\AR}{\mathit{AR}} % Aspect ration
+
+\newcommand{\ei}{\v{e}_x} % Unitary vectory in the x-direction
+\newcommand{\ej}{\v{e}_y} % Unitary vectory in the y-direction
+
+\newcommand{\uc}[1]{\,\mathrm{#1}}      % Style of the units
+
+\newcommand{\Cf}{\varsigma}
+\newcommand{\Cm}{\mu}
+
+
+% ----------------------------- %
+%  STYLE COMMANDS DEFINITION	%
+% ----------------------------- %
+% Equation cite:
+\newcommand{\eqcite}[1]{\cref{#1}} % equation at middle of sentence
+\newcommand{\Eqcite}[1]{\Cref{#1}} % Equation at starting of sentence
+     \Crefname{equation}{Eq.}{Eqs.}
+     \newcommand{\crefrangeconjunction}{--}
+% Figure cite:
+\newcommand{\fig}[1]{\cref{#1}}   % figure at middle of sentence
+\newcommand{\Fig}[1]{\Cref{#1}}   % Figure at starting of sentence
+     \crefname{figure}{Figure}{Figures}
+% Tabular cite
+\newcommand{\tab}[1]{Table~\ref{#1}}    % table at starting of sentence
+\newcommand{\Tab}[1]{Table~\ref{#1}}    % Table at starting of sentence
+% Section cite
+\newcommand{\Sec}[1]{\Cref{#1}}         % Section at starting of a sentence
+\renewcommand{\sec}[1]{\cref{#1}}       % Section at middle of a sentence
+
+% Shortcuts:
+\let\ig\includegraphics
+\let\tw\textwidth
+
+
+
+
+% ----------------------------- %
+%	NEW COLORS DEFINITION	%
+% ----------------------------- %
+% Matlab Colors:
+\definecolor{blu}{rgb}{0     ,0.4470,0.7410}
+\definecolor{org}{rgb}{0.8500,0.3250,0.0980}
+\definecolor{yel}{rgb}{0.9290,0.6940,0.1250}
+\definecolor{pur}{rgb}{0.4940,0.1840,0.5560}
+\definecolor{gre}{rgb}{0.4660,0.6740,0.1880}
+\definecolor{cia}{rgb}{0.3010,0.7450,0.9330}
+
+% Primary Colors:
+\definecolor{red}{rgb}{   1,  0,  0}
+\definecolor{blue}{rgb}{  0,  0,  1}
+\definecolor{green}{rgb}{ 0, .5,  0}
+\definecolor{green1}{rgb}{0, .7,  0}
+\definecolor{black}{rgb}{ 0,  0,  0}
+\definecolor{grey}{rgb}{ .5, .5, .5}
+\definecolor{sred}{rgb}{  1, .8, .8}  % shaded red
+\definecolor{sblue}{rgb}{.8, .8,  1}  % shaded blue
+\definecolor{sgreen}{rgb}{.8,  1, .8}  % shaded green
+
+
+
+
+% ----------------------------- %
+%	TIKZSETTINGS		%
+% ----------------------------- %
+
+% Default arrow head:
+\tikzset{
+     >={Latex[length=.2cm]}
+}
+% Circle a letter or number
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle, draw, inner sep=0pt, 
+        minimum height=12pt] (char) {#1};}}
+
+
+
+% ------------------------------------- %
+%  STYLE COMMANDS DEFINITION (CONT)	%
+% ------------------------------------- %
+\captionsetup[figure]{labelfont=bf,textfont=normalfont,labelsep=period,size=small}
+\captionsetup[table]{labelfont=bf,textfont=normalfont,labelsep=period,size=small}
+
+
+
+
+% ------------------------------------- %
+%  MISC. FOR THE PRESENT DOCUMENT  	%
+% ------------------------------------- %
+
+% COLOR DEFINITION:
+\definecolor{grey1}{rgb}{.73, .76, .8}  % wings color
+
+% 2D color curves
+\definecolor{cx1}{rgb}{ 0, .5, 0}  
+\definecolor{cx2}{rgb}{ 0, .7, 0}  
+\definecolor{cz1}{rgb}{ 0,  0, 1}  
+\definecolor{cz2}{rgb}{.5, .5, 1}  
+
+\newcommand{\mrkH}{o**}  % Marker for (H)eaving
+\newcommand{\mrkF}{v**}  % Marker for (F)lapping
+\newcommand{\lstT}{-}    % Linestyle for AR (T)wo
+\newcommand{\lstF}{.-}   % Linestyle for AR (F)our
+\newcommand{\colTf}{blu} % Color for AR (T)wo and Reynolds (f)ive hundred
+\newcommand{\colFf}{cia} % Color for AR (F)our and Reynolds (f)ive hundred 
+\newcommand{\colTo}{org} % Color for AR (T)wo and Reynolds (o)ne thousand
+\newcommand{\colFo}{yel} % Color for AR (F)our and Reynolds (o)ne thousand
+
+% --------------------------------------------------------------
+% LINES COMMANDS
+%% Re=500 
+ % AR = 2
+\newcommand{\syHTf}{\sy{\mrkH}{black}{\colTf}{\lstT}{\colTf}~}
+\newcommand{\syFTf}{\sy{\mrkF}{black}{\colTf}{\lstT}{\colTf}~}
+ % AR = 4                                                   ~
+\newcommand{\syHFf}{\sy{\mrkH}{black}{\colFf}{\lstF}{\colFf}~}
+\newcommand{\syFFf}{\sy{\mrkF}{black}{\colFf}{\lstF}{\colFf}~}
+%% Re=1000                                                  ~
+ % AR = 2                                                   ~
+\newcommand{\syHTo}{\sy{\mrkH}{black}{\colTo}{\lstT}{\colTo}~}
+\newcommand{\syFTo}{\sy{\mrkF}{black}{\colTo}{\lstT}{\colTo}~}
+ % AR = 4                                                   ~
+\newcommand{\syHFo}{\sy{\mrkH}{black}{\colFo}{\lstF}{\colFo}~}
+\newcommand{\syFFo}{\sy{\mrkF}{black}{\colFo}{\lstF}{\colFo}~}
+% --------------------------------------------------------------
+
+% --------------------------------------------------------------
+% SYMBOLS COMMANDS
+%% Re=500 
+ % AR = 2
+\newlength{\sizs}
+\setlength\sizs{.8ex}
+\newcommand{\sbHTf}{\lineSymbol[none]{\mrkH}{black}{\sizs}{.5pt}{\colTf}{}~}
+\newcommand{\sbFTf}{\lineSymbol[none]{\mrkF}{black}{\sizs}{.5pt}{\colTf}{}~}
+ % AR = 4
+\newcommand{\sbHFf}{\lineSymbol[none]{\mrkH}{black}{\sizs}{.5pt}{\colFf}{}~}
+\newcommand{\sbFFf}{\lineSymbol[none]{\mrkF}{black}{\sizs}{.5pt}{\colFf}{}~}
+%% Re=1000
+ % AR = 2
+\newcommand{\sbHTo}{\lineSymbol[none]{\mrkH}{black}{\sizs}{.2pt}{\colTo}{}~}
+\newcommand{\sbFTo}{\lineSymbol[none]{\mrkF}{black}{\sizs}{.5pt}{\colTo}{}~}
+ % AR = 4
+\newcommand{\sbHFo}{\lineSymbol[none]{\mrkH}{black}{\sizs}{.5pt}{\colFo}{}~}
+\newcommand{\sbFFo}{\lineSymbol[none]{\mrkF}{black}{\sizs}{.5pt}{\colFo}{}~}
+% --------------------------------------------------------------
+
+
+
+% Replace with a cite when known:
+\newcommand\Malaga{\textcolor{red}{Malaga}}
+
+
+
